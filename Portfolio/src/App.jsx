@@ -1,34 +1,62 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import {
+  ChakraProvider,
+  VStack,
+  Flex,
+  Heading,
+  IconButton,
+  ColorModeScript,
+  useColorMode,
+  Spacer,
+} from "@chakra-ui/react";
+import { FaSun, FaMoon, FaTwitter, FaGithub, FaLinkedin } from "react-icons/fa";
+import Social from "./Social";
+import Header from "./Header";
+import Profile from "./Profile";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isLight = colorMode === "light";
 
   return (
-    <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
-  )
+    <VStack p={5}>
+      <Flex w="100%">
+        <Heading ml="8" size="lg" fontWeight="semibold" color="blue.400">
+          Code with Cam
+        </Heading>
+        <Spacer></Spacer>
+        <IconButton
+          ml={2}
+          icon={<FaLinkedin />}
+          isRound="true"
+          onClick={() =>
+            window.open("https://www.linkedin.com/in/cameronguadagnino/")
+          }
+        ></IconButton>
+        <IconButton
+          ml={2}
+          icon={<FaGithub />}
+          isRound="true"
+          onClick={() => window.open("https://github.com/C-Guadagnino")}
+        ></IconButton>
+        <IconButton
+          ml={2}
+          icon={<FaTwitter />}
+          isRound="true"
+          onClick={() => window.open("https://twitter.com/MuchoKimchi")}
+        ></IconButton>
+        <IconButton
+          ml={8}
+          icon={isLight ? <FaSun /> : <FaMoon />}
+          isRound="true"
+          onClick={toggleColorMode}
+        ></IconButton>
+      </Flex>
+      <Header></Header>
+      <Social></Social>
+      <Profile></Profile>
+    </VStack>
+  );
 }
 
-export default App
+export default App;
