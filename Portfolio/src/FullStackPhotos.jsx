@@ -7,10 +7,6 @@ const FullStackPhoto = () => {
 
   return (
     <>
-      <Button mt={3} color="blue.400" onClick={onOpen}>
-        Get some more info on me!
-      </Button>
-
       <Modal size="xl" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
