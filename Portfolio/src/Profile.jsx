@@ -1,5 +1,7 @@
 import React from "react";
-import dingus from "./images/dingus.gif";
+import eatinerary from "./images/eatinerary.gif";
+import carcar from "./images/carcar.gif";
+import ferris from "./images/ferrissweep.gif";
 import {
   Flex,
   Heading,
@@ -87,7 +89,10 @@ const Profile = () => {
                 <DrawerHeader>What Cam has Coded</DrawerHeader>
 
                 <DrawerBody>
-                  <Image src={dingus}></Image>
+                  <Heading color="blue.100">Eatinerary</Heading>
+                  <Image src={eatinerary}></Image>
+                  <Heading color="blue.100">Car Car</Heading>
+                  <Image src={carcar}></Image>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
@@ -122,7 +127,8 @@ const Profile = () => {
                 <DrawerHeader>What Cam has Done</DrawerHeader>
 
                 <DrawerBody>
-                  <p>testing</p>
+                  <Heading color="blue.100">Ferris Sweep Custom Layout</Heading>
+                  <Image src={ferris}></Image>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
@@ -159,10 +165,15 @@ const Profile = () => {
               <DrawerOverlay />
               <DrawerContent>
                 <DrawerCloseButton />
-                <DrawerHeader>What Cam has Done</DrawerHeader>
+                <DrawerHeader>What Cam Likes to Do</DrawerHeader>
 
                 <DrawerBody>
-                  <p>tes...ting..?</p>
+                  <Heading>No fun Videos... Yet!</Heading>
+                  <text>
+                    I am passionate about fitness, and there will soon be videos<br></br>
+                    here of some of my proudest accomplishments during my
+                    lifting journey!
+                  </text>
                 </DrawerBody>
               </DrawerContent>
             </Drawer>
